@@ -9,6 +9,7 @@ class Triangle
   end
   
   def kind 
+  if   
     begin 
     raise TriangleError => error 
     rescue TriangleError 
