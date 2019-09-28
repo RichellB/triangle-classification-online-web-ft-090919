@@ -9,7 +9,12 @@ class Triangle
   end
   
   def kind 
-    
+    begin 
+    raise TriangleError => error 
+    rescue TriangleError 
+      puts error 
+    end
+  else
     self.type
     
   end
