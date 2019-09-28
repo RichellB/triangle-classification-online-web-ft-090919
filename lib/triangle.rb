@@ -10,9 +10,9 @@ class Triangle
   
   def kind
     triangle_valid
-    if a == b && b == c
+    if length1 == length2 && length2 == length3
       :equilateral
-    elsif a == b || b == c || a == c
+    elsif length1 == length2 || length2 == length3 || length1 == length3
       :isosceles
     else
       :scalene
@@ -20,9 +20,9 @@ class Triangle
   end
 
   def triangle_valid
-    real_triangle = [(a + b > c), (a + c > b), (b + c > a)]
+    valid_triangle = [(a + b > c), (a + c > b), (b + c > a)]
     [a, b, c].each do |side|
-      real_triangle << false if side <= 0 
+      valid_triangle << false if side <= 0 
     raise TriangleError if real_triangle.include?(false)
     end
   end
