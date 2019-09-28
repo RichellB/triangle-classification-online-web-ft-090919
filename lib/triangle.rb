@@ -21,7 +21,7 @@ class Triangle
   def triangle_valid
     valid_triangle = [(length1 + length2 > length3), (length1 + length3 > length2), (length2 + length3 > length1)]
     [length1, length2, length3].each do |sides|
-      valid_triangle << false if side <= 0 
+      valid_triangle << false if sides <= 0 
     raise TriangleError if valid_triangle.include?(false)
     end
   end
