@@ -20,7 +20,7 @@ class Triangle
   end
 
   def triangle_valid
-    valid_triangle = [(a + b > c), (a + c > b), (b + c > a)]
+    valid_triangle = [(length1 + length2 > length3), (length1 + length3 > length), (b + c > a)]
     [a, b, c].each do |side|
       valid_triangle << false if side <= 0 
     raise TriangleError if real_triangle.include?(false)
